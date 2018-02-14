@@ -1,3 +1,6 @@
+#define nil list_vt_nil
+#define :: list_vt_cons
+
 vtypedef named = @{ fst = string, snd = bool }
 vtypedef test_tree = @{ group = string, leaves = List_vt(named) }
 
