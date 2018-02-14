@@ -1,3 +1,3 @@
 # specats
 
-A unit testing library for ATS.
+A bare-bones unit testing library for ATS.
