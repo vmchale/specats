@@ -8,6 +8,6 @@ in λ(x : List Integer) →
   dep //
     { libName = "specats"
     , dir = ".atspkg/contrib"
-    , url = concat [ "https://github.com/vmchale/specats/archive/", showVersion x, ".tar.gz"
+    , url = concat [ "https://github.com/vmchale/specats/archive/", showVersion x, ".tar.gz" ]
     , libVersion = x
     }
