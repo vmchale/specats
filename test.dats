@@ -13,8 +13,9 @@ fn fail_incomplete(i : int, n : int) : void =
       ()
   }
 
-fnx iterate_list(t : test_tree, i : int, n : int) : void =
+fnx iterate_list(t : test_tree, i : int) : void =
   let
+    val n = list_vt_length(test_tree.leaves)
     val _ = if i = 0 then
       println!(t.group + ":")
     else
