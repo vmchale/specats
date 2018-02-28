@@ -1,13 +1,9 @@
-let dep = https://raw.githubusercontent.com/vmchale/atspkg/master/dhall/default-pkg.dhall
-in
-let concat = https://ipfs.io/ipfs/QmQ8w5PLcsNz56dMvRtq54vbuPe9cNnCCUXAQp6xLc6Ccx/Prelude/Text/concat
-in
-let showVersion = https://raw.githubusercontent.com/vmchale/atspkg/master/dhall/dhall-version.dhall
+let prelude = https://raw.githubusercontent.com/vmchale/atspkg/master/dhall/atspkg-prelude.dhall
 
 in λ(x : List Integer) → 
-  dep //
+  prelude.dep //
     { libName = "specats"
     , dir = ".atspkg/contrib"
-    , url = concat [ "https://github.com/vmchale/specats/archive/", showVersion x, ".tar.gz" ]
+    , url = "https://github.com/vmchale/specats/archive/${prelude.showVersion x}.tar.gz"
     , libVersion = x
     }
