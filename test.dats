@@ -1,7 +1,6 @@
-#define nil list_vt_nil
-#define :: list_vt_cons
-
 staload "./test.sats"
+staload "libats/ML/SATS/string.sats"
+staload _ = "libats/ML/DATS/string.dats"
 
 implement fail_incomplete (i, n) =
   {
