@@ -1,10 +1,9 @@
 #define nil list_vt_nil
 #define :: list_vt_cons
 
-vtypedef named = @{ fst = string, snd = bool }
-vtypedef test_tree = @{ group = string, leaves = List_vt(named) }
+staload "./test.sats"
 
-fn fail_incomplete(i : int, n : int) : void =
+implement fail_incomplete (i, n) =
   {
     val _ = prerr!("\nTest suite complete (" + tostring_int(i) + "/" + tostring_int(n) + ")\n")
     val _ = if n != i then
@@ -13,7 +12,7 @@ fn fail_incomplete(i : int, n : int) : void =
       ()
   }
 
-fnx iterate_list(t : test_tree, i : int, n : int) : void =
+implement iterate_list (t, i, n) =
   let
     val _ = if i = 0 then
       println!(t.group + ":")
