@@ -3,7 +3,7 @@
 
 implement main0 () =
   {
-    var b = $delay(true)
+    var b = true
     var n = @{ test_name = "test", test_result = b }
     var xs = n :: nil
     var total = list_vt_length(xs)
