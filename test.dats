@@ -11,6 +11,7 @@ implement fail_incomplete (i, n) =
       ()
   }
 
+// TODO: allow to run action on failure?
 implement iterate_list (t, i, n) =
   let
     val _ = if i = 0 then
