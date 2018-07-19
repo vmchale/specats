@@ -1,5 +1,5 @@
-vtypedef named = @{ fst = string, snd = bool }
-vtypedef test_tree = @{ group = string, leaves = List_vt(named) }
+vtypedef named_test = @{ test_name = string, test_result = lazy(bool) }
+vtypedef test_tree = @{ group = string, leaves = List_vt(named_test) }
 
 fun fail_incomplete(i : int, n : int) : void
 

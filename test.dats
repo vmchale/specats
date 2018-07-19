@@ -18,13 +18,16 @@ implement iterate_list (t, i, n) =
     else
       ()
     
-    fun handle_loop(s : string, b : bool, xs : test_tree) : void =
-      if b then
+    fun handle_loop(s : string, b : lazy(bool), xs : test_tree) : void =
+      if !b then
         (println!("  \33[32msucceeded:\33[0m " + s) ; iterate_list(xs, i + 1, n))
       else
         (println!("  \33[31mfailed:\33[0m " + s) ; iterate_list(xs, i, n))
   in
     case+ t.leaves of
       | ~list_vt_nil() => fail_incomplete(i, n)
-      | ~list_vt_cons (x, xs) => handle_loop(x.fst, x.snd, @{ group = t.group, leaves = xs })
+      | ~list_vt_cons (x, xs) => handle_loop( x.test_name
+                                            , x.test_result
+                                            , @{ group = t.group, leaves = xs }
+                                            )
   end
