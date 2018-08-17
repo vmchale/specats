@@ -3,7 +3,7 @@ let prelude = http://hackage.haskell.org/package/ats-pkg/src/dhall/atspkg-prelud
 in λ(x : List Natural) →
   prelude.dep ⫽
     { libName = "specats"
-    , dir = ".atspkg/contrib"
+    , dir = prelude.patsHome
     , url = "https://github.com/vmchale/specats/archive/${prelude.showVersion x}.tar.gz"
     , libVersion = x
     }
